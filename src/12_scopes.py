@@ -5,7 +5,9 @@
 x = 12
 
 def changeX():
-    global x = 99
+    global x
+    x = 99
+    return x
 
 changeX()
 
@@ -16,10 +18,12 @@ print(x)
 # This nested function has a similar problem.
 
 def outer():
-    nonlocal y = 120
+    y = 120
 
     def inner():
+        nonlocal y
         y = 999
+        return y
 
     inner()
 

@@ -22,3 +22,21 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+
+cal = calendar.TextCalendar(calendar.SUNDAY)
+
+d = input('\n\nEnter a four-digit year [yyyy]: '), input('Enter a two-digit month [mm]: ')
+m = d[1] or datetime.today().month
+y = d[0] or datetime.today().year
+print(y, m)
+
+try:
+  year = int(y)
+  month = int(m)
+  print(cal.formatmonth(year, month))
+except ValueError:
+  print(cal.formatmonth(y, m))
+
+ 
